@@ -54,13 +54,12 @@ python3 my_tb3_sim/reaction_logger.py
 
 # Output
 Experiment logs are stored via log_results.py and include:
-Message delay, Reaction time, Message drop rate, Obstacle-aware path change
+Message delay, Reaction time, Message drop rate
 
 ------------------------------------------------------------------------------------------------------------------------------------------
-# ros2_real: Manual Execution Guide (for Real-Robot Deployment)
+# ros2_sim: Manual Execution Guide (for Real-Robot Deployment)
 For researchers deploying this on Yahboom Pi5-based mobile robots, below are the actual commands used to launch each module step by step.
-
-# ROS2 QoS-Based Multi-Robot Experiment (ros2_sim)
+Key codes for robot-to-robot response time, message, delay, drop rate, map_update, according to QoS in Real-world
 This repository provides a complete experimental setup for evaluating multi-robot cooperation using ROS 2 Humble on Yahboom Pi5 robots. 
 It investigates how various QoS conditions impact obstacle sharing, map synchronization, and goal navigation performance over DDS.
 
@@ -91,7 +90,7 @@ Save result as data/condition_A.csv
 Used during real-world deployment on Yahboom Pi5
 ## Robot 1 (SLAM + Publish)
 # 1. Start SLAM
-ros2 launch slam_toolbox online_async_launch.py namespace:=robot1 use_sim_time:=false params_file:=config/nav2_params_pi5_1.yaml
+ros2 launch carthgrapher online_async_launch.py namespace:=robot1 use_sim_time:=false params_file:=config/nav2_params_pi5_1.yaml
 # 2. Start obstacle_info publisher
 ros2 run ros2_sim obstacle_info_publisher.py
 # 3. Start map update publisher
