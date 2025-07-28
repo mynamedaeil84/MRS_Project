@@ -1,6 +1,7 @@
 # my_tb3_sim: Simulation guide
 This repository contains the simulation code, ROS 2 nodes, and experimental setup used in the paper:  
 "Generation of Critical Information and Sharing Mechanism for Multi-Robot Mission Success" in *IEEE Access, 2025*
+The repository provides a minimal working example and the key components required to reproduce the main results of the paper.
 
 ## Overview
 This study evaluates a real-time information sharing mechanism between two TurtleBot3 robots under different QoS conditions.  
@@ -59,8 +60,8 @@ Message delay, Reaction time, Message drop rate
 ------------------------------------------------------------------------------------------------------------------------------------------
 # ros2_real : Real-Robot Execution Guide
 For researchers deploying this on Yahboom Pi5-based mobile robots, below are the actual commands used to launch each module step by step.
-**Key codes for robot-to-robot response time, message, delay, drop rate, map_update, according to QoS in Real-world.
-This repository provides a complete experimental setup for evaluating multi-robot cooperation using ROS 2 Humble on Yahboom Pi5 robots. 
+**Key codes for robot-to-robot response time, message, delay, drop rate, map_update, according to QoS in Real-world, The repository provides
+a minimal working example and the key components required to reproduce the main results of the paper.
 It investigates how various QoS conditions impact obstacle sharing, map synchronization, and goal navigation performance over DDS.
 
 ## Experimental Scenario
