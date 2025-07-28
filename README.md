@@ -59,7 +59,7 @@ Message delay, Reaction time, Message drop rate
 ------------------------------------------------------------------------------------------------------------------------------------------
 # ros2_real : Real-Robot Execution Guide
 For researchers deploying this on Yahboom Pi5-based mobile robots, below are the actual commands used to launch each module step by step.
-Key codes for robot-to-robot response time, message, delay, drop rate, map_update, according to QoS in Real-world
+**Key codes for robot-to-robot response time, message, delay, drop rate, map_update, according to QoS in Real-world.
 This repository provides a complete experimental setup for evaluating multi-robot cooperation using ROS 2 Humble on Yahboom Pi5 robots. 
 It investigates how various QoS conditions impact obstacle sharing, map synchronization, and goal navigation performance over DDS.
 
