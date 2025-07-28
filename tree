@@ -1,4 +1,4 @@
-daniel@223-pc:~/ros2_sim/my_tb3_sim$ tree
+my_tb3_sim$ tree
 .
 ├── config
 │   ├── nav2_params_tb3_1.yaml
