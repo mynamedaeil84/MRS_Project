@@ -1,1 +1,0 @@
-/home/daniel/ros2_sim/my_tb3_sim/launch/tb3_1_system.launch.py

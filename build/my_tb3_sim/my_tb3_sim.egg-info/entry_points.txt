@@ -1,6 +1,0 @@
-[console_scripts]
-log_results = my_tb3_sim.log_results:main
-obstacle_info_marker = my_tb3_sim.obstacle_info_marker:main
-obstacle_info_publisher = my_tb3_sim.obstacle_info_publisher:main
-reaction_logger = my_tb3_sim.reaction_logger:main
-

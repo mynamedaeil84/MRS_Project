@@ -1,1 +1,0 @@
-/home/daniel/ros2_sim/my_tb3_sim/launch/run_experiment.launch.py
