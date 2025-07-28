@@ -1,5 +1,0 @@
-obstacle_info_qos:
-  reliability: RMW_QOS_POLICY_RELIABILITY_RELIABLE
-  durability: RMW_QOS_POLICY_DURABILITY_VOLATILE
-  history: RMW_QOS_POLICY_HISTORY_KEEP_LAST
-  depth: 10
