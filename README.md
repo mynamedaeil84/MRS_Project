@@ -28,33 +28,33 @@ my_tb3_sim/
 ├── setup.py / package.xml # ROS 2 package metadata
 └── README.md
 
-1. Build
+# 1. Build
 bash
 cd ~/ros2_sim  # or your workspace
 colcon build --packages-select my_tb3_sim
 source install/setup.bash
 
-2. Launch TB3-1 and TB3-2
+# 2. Launch TB3-1 and TB3-2
 ros2 launch my_tb3_sim tb3_1_system.launch.py
 ros2 launch my_tb3_sim tb3_2_system.launch.py
 
-3. Run experiment and logger
+# 3. Run experiment and logger
 ros2 launch my_tb3_sim run_experiment.launch.py
 # OR manually:
 python3 my_tb3_sim/obstacle_info_publisher.py
 python3 my_tb3_sim/reaction_logger.py
 
 
-QoS Profiles
+# QoS Profiles
 | Condition | Reliability | Durability | History   | Depth |
 | --------- | ----------- | ---------- | --------- | ----- |
 | A         | Reliable    | Volatile   | Keep Last | 10    |
 | ...       | ...         | ...        | ...       | ...   |
 
-Output
+# Output
 Experiment logs are stored via log_results.py and include:
-Message delay
-Reaction time
-Message drop rate
-Obstacle-aware path change
+# Message delay
+# Reaction time
+# Message drop rate
+# Obstacle-aware path change
 
