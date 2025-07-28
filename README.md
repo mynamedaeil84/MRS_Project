@@ -73,21 +73,8 @@ ros2_sim/
 ├── launch/                     # Launch files for each robot and RViz
 ├── config/                     # QoS profiles and nav2 configs
 ├── scripts/                    # Pub/sub nodes, logger, QoS loader, etc.
-├── maps/                       # Saved map from SLAM
-├── data/                       # Experiment result CSVs
-├── run_experiment.sh          # Batch run per QoS condition
-├── tc_netem_runner.sh         # Network disturbance injector
+└── maps/  # SLAM map for localization
 
-# Option 1: Automated Execution (Recommended)
-# Run all steps for QoS Condition A (A ~ G)
-bash scripts/run_experiment.sh A
-Load qos_profile_A.yaml
-Launch SLAM/NAV2 + pub/sub + logger
-Simulate network delay/loss (if needed)
-Save result as data/condition_A.csv
-
-# Option 2: Manual Execution (For Real Robot Testing)
-Used during real-world deployment on Yahboom Pi5
 ## Robot 1 (SLAM + Publish)
 # 1. Start SLAM
 ros2 launch carthgrapher online_async_launch.py namespace:=robot1 use_sim_time:=false params_file:=config/nav2_params_pi5_1.yaml
