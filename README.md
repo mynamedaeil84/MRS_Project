@@ -11,10 +11,10 @@ The repository includes:
 - Gazebo Classic simulation world
 
 ## Environment
-- **Ubuntu 22.04**
-- **ROS 2 Humble**
-- **Gazebo Classic**
-- **TurtleBot3 Burger**
+- Ubuntu 22.04
+- ROS 2 Humble
+- Gazebo Classic
+- TurtleBot3 Burger
 - Python 3.10+
 
 ## Directory Structure
@@ -53,8 +53,5 @@ python3 my_tb3_sim/reaction_logger.py
 
 # Output
 Experiment logs are stored via log_results.py and include:
-# Message delay
-# Reaction time
-# Message drop rate
-# Obstacle-aware path change
+Message delay, Reaction time, Message drop rate, Obstacle-aware path change
 
