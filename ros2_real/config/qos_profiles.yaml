@@ -1,0 +1,17 @@
+obstacle_info:
+  reliability: best_effort
+  durability: volatile
+  history: keep_last
+  depth: 1
+
+map_update:
+  reliability: best_effort
+  durability: volatile
+  history: keep_last
+  depth: 1
+
+hazard_zone:
+  reliability: best_effort
+  durability: volatile
+  history: keep_last
+  depth: 1

@@ -1,0 +1,53 @@
+controller_server:
+  ros__parameters:
+    controller_frequency: 20.0
+    min_x_velocity_threshold: 0.001
+    min_y_velocity_threshold: 0.5
+    min_theta_velocity_threshold: 0.001
+    failure_tolerance: 0.3
+    
+    # 단일 컨트롤러 플러그인 정의
+    controller_plugins: ["FollowPath"]
+    
+    # DWB 로컬 플래너를 사용하는 경우
+    FollowPath:
+      plugin: "dwb_core::DWBLocalPlanner"
+      debug_trajectory_details: True
+      min_vel_x: 0.0
+      min_vel_y: 0.0
+      max_vel_x: 0.26
+      max_vel_y: 0.0
+      max_vel_theta: 2.75
+      min_speed_xy: 0.0
+      max_speed_xy: 0.22
+      min_speed_theta: 0.0
+      acc_lim_x: 2.5
+      acc_lim_y: 0.0
+      acc_lim_theta: 3.2
+      decel_lim_x: -2.5
+      decel_lim_y: 0.0
+      decel_lim_theta: -3.2
+      
+      # Critics 명확하게 정의
+      critics: 
+        - dwb_critics::RotateToGoalCritic
+        - dwb_critics::ObstacleFootprintCritic
+        - dwb_critics::GoalAlignCritic
+        - dwb_critics::PathAlignCritic
+        - dwb_critics::PathDistCritic
+        - dwb_critics::GoalDistCritic
+      critic_configs:
+        RotateToGoalCritic:
+          scale: 32.0
+        ObstacleFootprintCritic:
+          scale: 2.0
+        GoalAlignCritic:
+          scale: 24.0
+        PathAlignCritic:
+          scale: 32.0
+        PathDistCritic:
+          scale: 32.0
+        GoalDistCritic:
+          scale: 24.0
+        OscillationCritic:
+          scale: 1.0

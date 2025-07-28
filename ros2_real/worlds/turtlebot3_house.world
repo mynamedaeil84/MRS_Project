@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="default">
+    <!-- 필수 ROS2 플러그인 -->
+    <plugin name="gazebo_ros_init" filename="libgazebo_ros_init.so">
+      <namespace>/gazebo</namespace>
+    </plugin>
+    
+    <plugin name="gazebo_ros_factory" filename="libgazebo_ros_factory.so">
+      <namespace>/gazebo</namespace>
+    </plugin>
+    
+    <plugin name="gazebo_ros_force_system" filename="libgazebo_ros_force_system.so">
+      <namespace>/gazebo</namespace>
+    </plugin>
+
+    <!-- GPU 레이캐스팅 플러그인 -->
+    <plugin name="gazebo_ros_ray_sensor" filename="libgazebo_ros_ray_sensor.so">
+      <ros>
+        <namespace>/gazebo</namespace>
+      </ros>
+      <update_rate>30.0</update_rate>
+      <gpu>true</gpu>
+    </plugin>
+    
+    <!-- 기존 플러그인 -->
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <update_rate>30.0</update_rate>
+    </plugin>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <scene>
+      <shadows>false</shadows>
+      <ambient>0.8 0.8 0.8 1.0</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <grid>false</grid>
+    </scene>
+
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>0.319654 -0.235002 9.29441 0 1.5138 0.009599</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+
+    <physics type="ode">
+      <real_time_update_rate>1000.0</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>150</iters>
+          <precon_iters>0</precon_iters>
+          <sor>1.400000</sor>
+          <use_dynamic_moi_rescaling>1</use_dynamic_moi_rescaling>
+        </solver>
+        <constraints>
+          <cfm>0.00001</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>2000.000000</contact_max_correcting_vel>
+          <contact_surface_layer>0.01000</contact_surface_layer>
+        </constraints>
+      </ode>
+    </physics>
+
+    <model name="turtlebot3_house">
+      <static>1</static>
+      <include>
+        <uri>model://turtlebot3_house</uri>
+      </include>
+    </model>
+    
+    <!-- 모델 경로 설정 -->
+    <plugin name="gazebo_ros_paths" filename="libgazebo_ros_paths.so">
+      <ros>
+        <!-- 필요한 경우 네임스페이스 설정 -->
+      </ros>
+    </plugin>
+
+    <!-- TurtleBot3 burger 모델 1 - 네임스페이스와 플러그인 이름 구분 -->
+    <include>
+      <uri>model://turtlebot3_burger</uri>
+      <pose>-3 -1 0 0 0 0</pose>
+      <name>turtlebot3_burger_1</name>
+      
+      <!-- 플러그인 설정 override -->
+      <plugin name="turtlebot3_diff_drive_1" filename="libgazebo_ros_diff_drive.so">
+        <ros>
+          <namespace>/tb3_1</namespace>
+          <remapping>cmd_vel:=cmd_vel</remapping>
+          <remapping>odom:=odom</remapping>
+        </ros>
+        <update_rate>30</update_rate>
+        <left_joint>wheel_left_joint</left_joint>
+        <right_joint>wheel_right_joint</right_joint>
+        <wheel_separation>0.287</wheel_separation>
+        <wheel_diameter>0.066</wheel_diameter>
+        <max_wheel_torque>20</max_wheel_torque>
+        <max_wheel_acceleration>1.0</max_wheel_acceleration>
+        <publish_odom>true</publish_odom>
+        <publish_odom_tf>true</publish_odom_tf>
+        <publish_wheel_tf>false</publish_wheel_tf>
+        <odometry_frame>odom</odometry_frame>
+        <robot_base_frame>base_footprint</robot_base_frame>
+      </plugin>
+    </include>
+
+    <!-- TurtleBot3 buger 모델 2 - 다른 위치와 네임스페이스 -->
+    <include>
+      <uri>model://turtlebot3_buger</uri>
+      <pose>1 -3 0 0 0 0</pose>
+      <name>turtlebot3_burger_2</name>
+      
+      <!-- 플러그인 설정 override -->
+      <plugin name="turtlebot3_diff_drive_2" filename="libgazebo_ros_diff_drive.so">
+        <ros>
+          <namespace>/tb3_2</namespace>
+          <remapping>cmd_vel:=cmd_vel</remapping>
+          <remapping>odom:=odom</remapping>
+        </ros>
+        <update_rate>30</update_rate>
+        <left_joint>wheel_left_joint</left_joint>
+        <right_joint>wheel_right_joint</right_joint>
+        <wheel_separation>0.287</wheel_separation>
+        <wheel_diameter>0.066</wheel_diameter>
+        <max_wheel_torque>20</max_wheel_torque>
+        <max_wheel_acceleration>1.0</max_wheel_acceleration>
+        <publish_odom>true</publish_odom>
+        <publish_odom_tf>true</publish_odom_tf>
+        <publish_wheel_tf>false</publish_wheel_tf>
+        <odometry_frame>odom</odometry_frame>
+        <robot_base_frame>base_footprint</robot_base_frame>
+      </plugin>
+    </include>
+
+  </world>
+</sdf>

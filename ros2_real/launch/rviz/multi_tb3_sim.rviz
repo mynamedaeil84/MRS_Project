@@ -1,0 +1,35 @@
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Map
+      Name: TB3-1 Map
+      Topic: /tb3_1/map
+    - Class: rviz_default_plugins/Map
+      Name: TB3-2 Map
+      Topic: /tb3_2/map
+    - Class: rviz_default_plugins/Map
+      Name: Merged Map
+      Topic: /merged_map
+    - Class: rviz_default_plugins/RobotModel
+      Name: TB3-1 Model
+      Description Topic: /tb3_1/robot_description
+    - Class: rviz_default_plugins/RobotModel
+      Name: TB3-2 Model
+      Description Topic: /tb3_2/robot_description
+    - Class: rviz_default_plugins/LaserScan
+      Name: TB3-1 Laser
+      Topic: /tb3_1/scan
+    - Class: rviz_default_plugins/LaserScan
+      Name: TB3-2 Laser
+      Topic: /tb3_2/scan
+    - Class: rviz_default_plugins/Path
+      Name: TB3-1 Path
+      Topic: /tb3_1/follow_path/_path
+    - Class: rviz_default_plugins/Path
+      Name: TB3-2 Path
+      Topic: /tb3_2/follow_path/_path
+    - Class: rviz_default_plugins/TF
+      Name: TF
+  Enabled: true
+  Fixed Frame: /tb3_1/map
+  Name: root
